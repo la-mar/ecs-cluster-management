@@ -89,7 +89,7 @@ policy = {
             "Effect": "Allow",
             "Action": ["ec2:Describe*", "ec2:TerminateInstances"],
             "Resource": f"arn:aws:ec2:{region}:{account_id}:instance/*",
-            "Condition": {"StringLike": {"ec2:ResourceTag/service_name": "ecs-*"}},
+            "Condition": {"StringLike": {"ec2:ResourceTag/Name": "ecs-*"}},
         },
         {"Effect": "Allow", "Action": ["ecs:Describe*", "ecs:List*"], "Resource": "*"},
     ],
